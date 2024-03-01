@@ -17,6 +17,13 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
-    "paths": {}
+    "paths": {
+      "@lib/rmq": [
+        "libs/rmq/src"
+      ],
+      "@lib/rmq/*": [
+        "libs/rmq/src/*"
+      ]
+    }
   }
 }
