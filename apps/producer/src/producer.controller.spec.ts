@@ -1,8 +1,8 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { ProducerController } from './producer.controller';
-import { ProducerService } from './producer.service';
+import { Test, TestingModule } from "@nestjs/testing";
+import { ProducerController } from "./producer.controller";
+import { ProducerService } from "./producer.service";
 
-describe('ProducerController', () => {
+describe("ProducerController", () => {
   let producerController: ProducerController;
 
   beforeEach(async () => {
@@ -14,9 +14,9 @@ describe('ProducerController', () => {
     producerController = app.get<ProducerController>(ProducerController);
   });
 
-  describe('root', () => {
+  describe("root", () => {
     it('should return "Hello World!"', () => {
-      expect(producerController.getHello()).toBe('Hello World!');
+      expect(producerController.getHello()).toBe("Hello World!");
     });
   });
 });

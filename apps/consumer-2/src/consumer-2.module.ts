@@ -1,6 +1,6 @@
-import { Module } from '@nestjs/common';
-import { Consumer2Controller } from './consumer-2.controller';
-import { Consumer2Service } from './consumer-2.service';
+import { Module } from "@nestjs/common";
+import { Consumer2Controller } from "./consumer-2.controller";
+import { Consumer2Service } from "./consumer-2.service";
 
 @Module({
   imports: [],

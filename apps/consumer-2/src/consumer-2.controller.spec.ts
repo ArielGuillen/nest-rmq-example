@@ -1,8 +1,8 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { Consumer2Controller } from './consumer-2.controller';
-import { Consumer2Service } from './consumer-2.service';
+import { Test, TestingModule } from "@nestjs/testing";
+import { Consumer2Controller } from "./consumer-2.controller";
+import { Consumer2Service } from "./consumer-2.service";
 
-describe('Consumer2Controller', () => {
+describe("Consumer2Controller", () => {
   let consumer2Controller: Consumer2Controller;
 
   beforeEach(async () => {
@@ -14,9 +14,9 @@ describe('Consumer2Controller', () => {
     consumer2Controller = app.get<Consumer2Controller>(Consumer2Controller);
   });
 
-  describe('root', () => {
+  describe("root", () => {
     it('should return "Hello World!"', () => {
-      expect(consumer2Controller.getHello()).toBe('Hello World!');
+      expect(consumer2Controller.getHello()).toBe("Hello World!");
     });
   });
 });
