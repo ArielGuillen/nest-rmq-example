@@ -8,6 +8,8 @@
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
+    "start": "concurrently \"nest start producer\" \"nest start consumer-1\" \"nest start consumer-2\"",
+    "start:dev": "concurrently \"nest start --watch producer\" \"nest start --watch consumer-1\" \"nest start --watch consumer-2\"",
     "start:producer": "nest start producer",
     "start:consumer-1": "nest start consumer-1",
     "start:consumer-2": "nest start consumer-2",
@@ -42,6 +44,7 @@
     "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
+    "concurrently": "^8.2.2",
     "eslint": "^8.42.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
