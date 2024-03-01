@@ -19,4 +19,10 @@ describe("ProducerController", () => {
       expect(producerController.getHello()).toBe("Hello World!");
     });
   });
+
+  describe("publish-message", () => {
+    it('should return a "Message"', async () => {
+      expect(await producerController.publishMessage({ message: "Hello" })).toBe("Hello");
+    });
+  });
 });

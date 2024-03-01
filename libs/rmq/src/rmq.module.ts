@@ -9,7 +9,7 @@ import { RmqService } from "./rmq.service";
   exports: [RmqService],
 })
 export class RmqModule {
-  static forRoot(enableControllers: boolean = true) {
+  static forRoot() {
     return {
       module: RmqModule,
       imports: [
@@ -17,8 +17,8 @@ export class RmqModule {
           useFactory: (configService: ConfigService) => ({
             exchanges: [{ name: "amq.direct", type: "direct" }],
             uri: configService.get<string>("RABBIT_MQ_URI"),
-            enableControllerDiscovery: enableControllers,
             connectionInitOptions: { wait: false },
+            enableControllerDiscovery: false,
           }),
           inject: [ConfigService],
         }),
