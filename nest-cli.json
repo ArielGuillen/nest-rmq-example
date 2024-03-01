@@ -1,8 +1,50 @@
 {
   "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src",
+  "sourceRoot": "apps/nest-rmq-example/src",
   "compilerOptions": {
-    "deleteOutDir": true
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/nest-rmq-example/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/nest-rmq-example",
+  "projects": {
+    "nest-rmq-example": {
+      "type": "application",
+      "root": "apps/nest-rmq-example",
+      "entryFile": "main",
+      "sourceRoot": "apps/nest-rmq-example/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/nest-rmq-example/tsconfig.app.json"
+      }
+    },
+    "producer": {
+      "type": "application",
+      "root": "apps/producer",
+      "entryFile": "main",
+      "sourceRoot": "apps/producer/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/producer/tsconfig.app.json"
+      }
+    },
+    "consumer-1": {
+      "type": "application",
+      "root": "apps/consumer-1",
+      "entryFile": "main",
+      "sourceRoot": "apps/consumer-1/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/consumer-1/tsconfig.app.json"
+      }
+    },
+    "consumer-2": {
+      "type": "application",
+      "root": "apps/consumer-2",
+      "entryFile": "main",
+      "sourceRoot": "apps/consumer-2/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/consumer-2/tsconfig.app.json"
+      }
+    }
   }
 }
