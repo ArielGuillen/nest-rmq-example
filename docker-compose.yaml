@@ -1,0 +1,27 @@
+version: "2.4"
+
+services:
+  producer:
+    image: producer
+    build:
+      context: .
+      args:
+        - APP=producer
+    env_file:
+        - .env
+  consumer-1:
+    image: consumer-1
+    build:
+      context: .
+      args:
+        - APP=consumer-1
+    env_file:
+      - .env
+  consumer-2:
+      image: consumer-2
+      build:
+        context: .
+        args:
+          - APP=consumer-2
+      env_file:
+        - .env

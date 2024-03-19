@@ -7,6 +7,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "nest build",
+    "build:all": "nest build producer && nest build consumer-1 && nest build consumer-2",
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
     "start": "concurrently \"nest start producer\" \"nest start consumer-1\" \"nest start consumer-2\"",
     "start:dev": "concurrently \"nest start --watch producer\" \"nest start --watch consumer-1\" \"nest start --watch consumer-2\"",
