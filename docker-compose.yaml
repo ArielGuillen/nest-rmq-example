@@ -2,15 +2,17 @@ version: "2.4"
 
 services:
   producer:
-    image: producer
+    image: arielguillendev/nest-rmq-example-producer
     build:
       context: .
       args:
         - APP=producer
     env_file:
         - .env
+    ports:
+      - "4000:4000"
   consumer-1:
-    image: consumer-1
+    image: arielguillendev/nest-rmq-example-consumer-1
     build:
       context: .
       args:
@@ -18,7 +20,7 @@ services:
     env_file:
       - .env
   consumer-2:
-      image: consumer-2
+      image: arielguillendev/nest-rmq-example-consumer-2
       build:
         context: .
         args:
